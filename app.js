@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 let api = require("./api");
 // const passport = require("passport");
-const googleAuth = require("./auth/GoogleAuth20");
+const Auth = require("./auth/index");
 const app = express();
 
 
@@ -19,7 +19,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.use("/api", api);
-app.use("/auth", googleAuth);
+app.use("/auth", Auth);
 
 // // catch 404 and forward to error handler
 // app.use(function(req, res, next) {

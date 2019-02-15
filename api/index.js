@@ -36,4 +36,5 @@ server.get("/department", (req, res) =>{
     })
 
 });
+server.use("/users", queries.getAllUsers);
 module.exports = server;
